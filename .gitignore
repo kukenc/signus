@@ -12,6 +12,9 @@ signus-data/utils/fntmng
 
 signus-data/data/version-data
 signus/config.h
+signus/config.h.in
+signus-data/autom4te.cache/
+signus/autom4te.cache/
 
 Makefile
 Makefile.in
