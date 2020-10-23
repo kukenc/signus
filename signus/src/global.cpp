@@ -37,6 +37,7 @@
 #include <limits.h>
 #include <cstdlib>
 #include <clocale>
+#include <cerrno>
 
 extern "C" {
 #include "iniparser.h"
@@ -237,10 +238,12 @@ bool LoadINI() {
 
 void SaveINI() {
 	const char *fname = GetConfigFileName();
+	errno = 0;
 	FILE *f = fopen(fname, "wt");
 
 	if (!f) {
 		fprintf(stderr, "Error: Cannot save INI file %s\n", fname);
+		fprintf(stderr, "#%d: %s\n", errno, strerror(errno));
 		return;
 	}
 
