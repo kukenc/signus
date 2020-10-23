@@ -84,7 +84,7 @@ dnl FIXME - make it possible to compile signus w/o NASM
 dnl FIXME - check for version-data file and contained version
 
 case "$USE_DEBUG" in
-yes)	DEBUG_FLAGS="-g -O0 -Wall"
+yes)	DEBUG_FLAGS="-g -O0 -Wall -gdwarf"
         NASMFLAGS="$NASMFLAGS -g"
     ;;    
 *)	DEBUG_FLAGS="-O3"
